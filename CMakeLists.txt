@@ -18,4 +18,8 @@ target_link_libraries(zbx_sysrepo
 
 include(GNUInstallDirs)
 install(TARGETS zbx_sysrepo
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/modules)
+    LIBRARY DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR}/modules)
+
+install(FILES
+    zbx_sysrepo.conf
+    DESTINATION ${CMAKE_INSTALL_FULL_SYSCONFDIR}/zabbix_agentd.conf.d)

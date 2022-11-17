@@ -19,7 +19,8 @@ zabbix_agentd -t 'sysrepo.get["/ietf-hardware:hardware/component[name=\"hwmon1/i
 
 ## Installation
 
-Download [Zabbix sources](https://www.zabbix.com/download_sources)
+Download [Zabbix sources](https://www.zabbix.com/download_sources) of the version
+you got installed.
 
 Build the module using:
 ```bash
@@ -29,9 +30,9 @@ make
 make install
 ```
 
-Add the module to the `/etc/zabbix_agentd.conf`
+Make sure the the `/etc/zabbix_agentd.conf` includes
 ```
-LoadModule=zbx_sysrepo.so
+Include=/etc/zabbix_agentd.conf.d/*.conf
 ```
 
 ## License
