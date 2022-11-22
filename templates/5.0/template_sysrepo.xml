@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>5.0</version>
+    <date>2022-11-22T14:36:24Z</date>
+    <groups>
+        <group>
+            <name>Templates/Modules</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Template Module Sysrepo</template>
+            <name>Template Module Sysrepo</name>
+            <groups>
+                <group>
+                    <name>Templates/Modules</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>ietf-system</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>Serial Number</name>
+                    <key>sysrepo.get[&quot;/ietf-hardware:hardware/component[name='device']/serial-num&quot;]</key>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <inventory_link>SERIALNO_A</inventory_link>
+                    <applications>
+                        <application>
+                            <name>ietf-system</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Temperature</name>
+                    <key>sysrepo.get[&quot;/ietf-hardware:hardware/component[name='hwmon0/temp1']/sensor-data/value&quot;]</key>
+                    <units>°C</units>
+                    <applications>
+                        <application>
+                            <name>ietf-system</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>MAC eth0</name>
+                    <key>sysrepo.get[&quot;/ietf-interfaces:interfaces/interface[name='eth0']/phys-address&quot;]</key>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <inventory_link>MACADDRESS_A</inventory_link>
+                    <applications>
+                        <application>
+                            <name>ietf-system</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>OS Name</name>
+                    <key>sysrepo.get[/ietf-system:system-state/platform/os-name]</key>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <inventory_link>OS</inventory_link>
+                    <applications>
+                        <application>
+                            <name>ietf-system</name>
+                        </application>
+                    </applications>
+                </item>
+            </items>
+        </template>
+    </templates>
+</zabbix_export>
